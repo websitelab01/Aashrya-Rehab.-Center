@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आश्रय सुधार तथा उपचार केन्द्र — Gachiya, Morang</title>
+<meta name="description" content="आश्रय सुधार तथा उपचार केन्द्र, गाछिया, मोरङ — हामी छौ र त उपचार सम्भव छ। नशा मुक्ति तथा उपचार सेवा।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --soil:#2B2520;
+    --soil-soft:#3D352D;
+    --paper:#FAF6EE;
+    --paper-dim:#F1EADC;
+    --clay:#8B5A2B;
+    --clay-deep:#6E4620;
+    --leaf:#4A6B4D;
+    --leaf-deep:#37502F;
+    --amber:#C8703D;
+    --line:rgba(43,37,32,0.14);
+    --line-soft:rgba(250,246,238,0.18);
+
+    --display-ne: 'Noto Serif Devanagari', serif;
+    --body-ne: 'Tiro Devanagari Sanskrit', serif;
+    --body-en: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--soil);
+    font-family:var(--body-en);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  .ne{font-family:var(--body-ne);}
+  .ne-display{font-family:var(--display-ne);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--amber);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ===== TOP BAR ===== */
+  .topbar{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:50;
+    background:rgba(250,246,238,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:1080px;
+    margin:0 auto;
+    padding:14px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brandmark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--display-ne);
+    font-weight:700;
+    font-size:1.05rem;
+    color:var(--soil);
+    text-decoration:none;
+  }
+  .brandmark svg{flex-shrink:0;}
+  .brand-en{
+    font-family:var(--mono);
+    font-size:0.62rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    display:block;
+    font-weight:600;
+  }
+  .nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+  }
+  .nav-links a{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+    text-decoration:none;
+    color:var(--soil-soft);
+    position:relative;
+    padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:0;
+    width:0%; height:2px;
+    background:var(--amber);
+    transition:width 0.25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-call{
+    background:var(--clay);
+    color:var(--paper) !important;
+    padding:9px 18px;
+    border-radius:3px;
+    font-family:var(--mono);
+    font-size:0.78rem;
+    font-weight:600;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-call::after{display:none;}
+  @media (max-width:760px){
+    .nav-links{display:none;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:148px 0 0;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px 40px;
+    position:relative;
+    z-index:2;
+  }
+  .eyebrow{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--mono);
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    color:var(--leaf-deep);
+    text-transform:uppercase;
+    margin-bottom:28px;
+  }
+  .eyebrow .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--leaf);
+    box-shadow:0 0 0 3px rgba(74,107,77,0.18);
+  }
+  .hero h1{
+    font-family:var(--display-ne);
+    font-weight:700;
+    font-size:clamp(2.3rem, 6vw, 4.1rem);
+    line-height:1.22;
+    color:var(--soil);
+    max-width:880px;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 .accent{color:var(--clay);}
+  .hero-sub{
+    margin-top:22px;
+    font-size:1.05rem;
+    color:var(--soil-soft);
+    max-width:560px;
+    font-family:var(--body-en);
+  }
+  .hero-sub .ne{font-size:1.08rem;}
+  .hero-actions{
+    margin-top:38px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 26px;
+    border-radius:3px;
+    font-family:var(--body-en);
+    font-weight:600;
+    font-size:0.95rem;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+  }
+  .btn-primary{
+    background:var(--clay);
+    color:var(--paper);
+  }
+  .btn-primary:hover{background:var(--clay-deep); transform:translateY(-1px);}
+  .btn-ghost{
+    border-color:var(--soil);
+    color:var(--soil);
+    background:transparent;
+  }
+  .btn-ghost:hover{background:var(--soil); color:var(--paper);}
+
+  .hero-place{
+    margin-top:54px;
+    display:flex;
+    gap:32px;
+    flex-wrap:wrap;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .place-item{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  .place-label{
+    font-family:var(--mono);
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+  }
+  .place-value{
+    font-family:var(--mono);
+    font-size:0.95rem;
+    color:var(--soil);
+    font-weight:600;
+  }
+
+  /* terrace svg background */
+  .hero-terrace{
+    position:absolute;
+    bottom:0; left:0; right:0;
+    width:100%;
+    z-index:1;
+    pointer-events:none;
+  }
+
+  /* ===== PATH SECTION (signature element) ===== */
+  .path-section{
+    position:relative;
+    padding:100px 0 120px;
+    background:var(--soil);
+    color:var(--paper);
+    overflow:hidden;
+  }
+  .path-section .wrap{position:relative; z-index:2;}
+  .path-head{
+    max-width:620px;
+    margin-bottom:64px;
+  }
+  .section-eyebrow{
+    font-family:var(--mono);
+    font-size:0.75rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:14px;
+    display:block;
+  }
+  .path-head h2{
+    font-family:var(--display-ne);
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    line-height:1.3;
+    color:var(--paper);
+  }
+  .path-head p{
+    margin-top:16px;
+    color:rgba(250,246,238,0.7);
+    font-size:1rem;
+  }
+
+  .path-track{
+    position:relative;
+    padding-left:8px;
+  }
+  .path-line-svg{
+    position:absolute;
+    left:23px;
+    top:14px;
+    bottom:14px;
+    width:4px;
+    height:calc(100% - 28px);
+  }
+  .path-steps{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:54px;
+  }
+  .path-step{
+    position:relative;
+    padding-left:64px;
+  }
+  .path-node{
+    position:absolute;
+    left:0; top:2px;
+    width:48px; height:48px;
+    border-radius:50%;
+    background:var(--soil);
+    border:2.5px solid var(--amber);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--mono);
+    font-weight:600;
+    font-size:0.95rem;
+    color:var(--amber);
+  }
+  .path-step h3{
+    font-family:var(--display-ne);
+    font-size:1.3rem;
+    color:var(--paper);
+    margin-bottom:8px;
+  }
+  .path-step p{
+    color:rgba(250,246,238,0.68);
+    font-size:0.97rem;
+    max-width:560px;
+  }
+
+  /* ===== ABOUT / WHO WE ARE ===== */
+  .about{
+    padding:108px 0;
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:start;
+  }
+  @media (max-width:800px){
+    .about-grid{grid-template-columns:1fr; gap:40px;}
+  }
+  .about h2{
+    font-family:var(--display-ne);
+    font-size:clamp(1.9rem, 4vw, 2.5rem);
+    line-height:1.32;
+    color:var(--soil);
+  }
+  .about-lead{
+    margin-top:20px;
+    font-size:1.05rem;
+    color:var(--soil-soft);
+  }
+  .value-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+  }
+  .value-item{
+    display:flex;
+    gap:18px;
+    padding-bottom:26px;
+    border-bottom:1px solid var(--line);
+  }
+  .value-item:last-child{border-bottom:none; padding-bottom:0;}
+  .value-icon{
+    flex-shrink:0;
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--paper-dim);
+    border:1.5px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .value-text h3{
+    font-family:var(--display-ne);
+    font-size:1.12rem;
+    color:var(--soil);
+    margin-bottom:4px;
+  }
+  .value-text p{
+    font-size:0.92rem;
+    color:var(--soil-soft);
+  }
+
+  /* ===== SERVICES STRIP ===== */
+  .services{
+    padding:90px 0 110px;
+    background:var(--paper-dim);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .services-head{
+    max-width:600px;
+    margin-bottom:54px;
+  }
+  .services-head h2{
+    font-family:var(--display-ne);
+    font-size:clamp(1.8rem,4vw,2.4rem);
+    color:var(--soil);
+  }
+  .services-head p{
+    margin-top:14px;
+    color:var(--soil-soft);
+  }
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media (max-width:760px){
+    .services-grid{grid-template-columns:1fr;}
+  }
+  .service-card{
+    background:var(--paper);
+    padding:34px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .service-num{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    color:var(--clay);
+    font-weight:600;
+  }
+  .service-card h3{
+    font-family:var(--display-ne);
+    font-size:1.18rem;
+    color:var(--soil);
+  }
+  .service-card p{
+    font-size:0.92rem;
+    color:var(--soil-soft);
+  }
+
+  /* ===== QUOTE / TAGLINE BANNER ===== */
+  .banner{
+    padding:90px 0;
+    text-align:center;
+    position:relative;
+  }
+  .banner blockquote{
+    font-family:var(--display-ne);
+    font-size:clamp(1.6rem, 4.2vw, 2.7rem);
+    line-height:1.45;
+    color:var(--soil);
+    max-width:760px;
+    margin:0 auto;
+  }
+  .banner blockquote .em{color:var(--clay);}
+  .banner cite{
+    display:block;
+    margin-top:22px;
+    font-family:var(--mono);
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--leaf-deep);
+    font-style:normal;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact{
+    padding:100px 0 120px;
+    background:var(--soil);
+    color:var(--paper);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+  }
+  @media (max-width:800px){
+    .contact-grid{grid-template-columns:1fr; gap:48px;}
+  }
+  .contact h2{
+    font-family:var(--display-ne);
+    font-size:clamp(1.9rem, 4vw, 2.5rem);
+    line-height:1.3;
+  }
+  .contact-lead{
+    margin-top:16px;
+    color:rgba(250,246,238,0.68);
+    max-width:460px;
+  }
+  .contact-cards{
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+    margin-top:36px;
+  }
+  .contact-card{
+    background:var(--soil);
+    padding:20px 22px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .contact-card .ico{
+    width:38px; height:38px;
+    flex-shrink:0;
+    border-radius:50%;
+    border:1.5px solid var(--amber);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .contact-card .label{
+    font-family:var(--mono);
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(250,246,238,0.5);
+  }
+  .contact-card .value{
+    font-family:var(--mono);
+    font-size:1.02rem;
+    font-weight:600;
+    color:var(--paper);
+  }
+  .contact-card a.value{text-decoration:none;}
+  .contact-card a.value:hover{color:var(--amber);}
+
+  .map-card{
+    background:rgba(250,246,238,0.05);
+    border:1px solid var(--line-soft);
+    border-radius:4px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .map-card h3{
+    font-family:var(--display-ne);
+    font-size:1.2rem;
+  }
+  .map-visual{
+    border-radius:3px;
+    overflow:hidden;
+    border:1px solid var(--line-soft);
+  }
+  .map-visual svg{display:block; width:100%; height:auto;}
+  .map-card p{
+    font-size:0.88rem;
+    color:rgba(250,246,238,0.6);
+  }
+  .map-card .addr{
+    font-family:var(--mono);
+    font-size:0.85rem;
+    color:var(--paper);
+    line-height:1.7;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    padding:32px 0;
+    background:var(--soil);
+    border-top:1px solid var(--line-soft);
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-inner p{
+    font-family:var(--mono);
+    font-size:0.74rem;
+    color:rgba(250,246,238,0.45);
+  }
+
+  /* reveal on scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{
+    opacity:1;
+    transform:translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="brandmark">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 3C9 9 5 14 5 19C5 23.4 9.5 27 15 27C20.5 27 25 23.4 25 19C25 14 21 9 15 3Z" stroke="#8B5A2B" stroke-width="1.8" fill="#FAF6EE"/>
+        <path d="M15 11V22M15 22C13 22 11.5 20.8 11.5 19M15 22C17 22 18.5 20.8 18.5 19" stroke="#4A6B4D" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span>
+        आश्रय सुधार केन्द्र
+        <span class="brand-en">Shelter Recovery &amp; Treatment Center</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">हाम्रो बारे</a></li>
+      <li><a href="#path">उपचार प्रक्रिया</a></li>
+      <li><a href="#services">सेवाहरू</a></li>
+      <li><a href="#contact">सम्पर्क</a></li>
+    </ul>
+    <a href="tel:9811340434" class="nav-call">📞 981-1340434</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow"><span class="dot"></span> गाछिया · मोरङ · पूर्वी नेपाल</div>
+      <h1 class="ne-display reveal">हामी छौं, र त्यसैले <span class="accent">उपचार सम्भव छ</span></h1>
+      <p class="hero-sub reveal">
+        <span class="ne">आश्रय सुधार तथा उपचार केन्द्र, गाछियामा रहेको नशा मुक्ति तथा पुनर्स्थापना केन्द्र हो। हामी कोही पनि आफ्नो यो यात्रा एक्लै हिँड्नु नपरोस् भन्ने विश्वास गर्छौं।</span><br>
+        A community-based addiction recovery and treatment shelter in Gachiya, Morang — because no one should have to walk this road alone.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:9811340434" class="btn btn-primary">अहिले फोन गर्नुहोस् · Call Now</a>
+        <a href="#about" class="btn btn-ghost">हाम्रो बारे थप जान्नुहोस्</a>
+      </div>
+
+      <div class="hero-place">
+        <div class="place-item">
+          <span class="place-label">Location</span>
+          <span class="place-value ne">गाछिया, मोरङ</span>
+        </div>
+        <div class="place-item">
+          <span class="place-label">Phone</span>
+          <span class="place-value">981-1340434</span>
+        </div>
+        <div class="place-item">
+          <span class="place-label">ID</span>
+          <span class="place-value">shelter_2021</span>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-terrace" viewBox="0 0 1200 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,160 L0,110 Q150,80 300,100 Q450,118 600,90 Q750,64 900,95 Q1050,118 1200,85 L1200,160 Z" fill="#EDE3CC"/>
+      <path d="M0,160 L0,130 Q200,108 400,128 Q600,148 800,122 Q1000,98 1200,120 L1200,160 Z" fill="#DFCFA4"/>
+      <path d="M0,160 L0,148 Q300,138 600,150 Q900,160 1200,144 L1200,160 Z" fill="#4A6B4D" opacity="0.35"/>
+    </svg>
+  </section>
+
+  <!-- ===== THE PATH (signature element) ===== -->
+  <section class="path-section" id="path">
+    <div class="wrap">
+      <div class="path-head reveal">
+        <span class="section-eyebrow">बाटो · The Path</span>
+        <h2 class="ne-display">उपचार एउटा यात्रा हो — हामी हरेक कदममा साथ दिन्छौं</h2>
+        <p>Recovery is a path walked step by step, not a switch flipped overnight. Here is how we walk it together with every individual who comes to us.</p>
+      </div>
+
+      <div class="path-track">
+        <ol class="path-steps">
+          <li class="path-step reveal">
+            <div class="path-node">०१</div>
+            <h3 class="ne-display">स्वागत र भर्ना</h3>
+            <p>परिवार वा व्यक्ति स्वयंले सम्पर्क गरेपछि, हामी सुरक्षित र सम्मानजनक तरिकाले भर्ना प्रक्रिया अगाडि बढाउँछौं — कुनै लाज वा डर बिना। A respectful, judgement-free intake when a family or individual first reaches out.</p>
+          </li>
+          <li class="path-step reveal">
+            <div class="path-node">०२</div>
+            <h3 class="ne-display">सुधार तथा उपचार</h3>
+            <p>दैनिक दिनचर्या, समूह छलफल, र व्यक्तिगत हेरचाहमार्फत शारीरिक तथा मानसिक रूपमा सुधारिने वातावरण उपलब्ध गराइन्छ। Structured daily routine, group sessions, and individual care to support both body and mind.</p>
+          </li>
+          <li class="path-step reveal">
+            <div class="path-node">०३</div>
+            <h3 class="ne-display">समुदाय र साथ</h3>
+            <p>उपचारमा रहेका सबैले एक्लो महसुस नगरून् भन्नका लागि सहकर्मी सहयोग समूह र आश्रयका साथीहरूको सञ्जाल बनाइन्छ। A peer community inside the shelter, so no one feels alone in their recovery.</p>
+          </li>
+          <li class="path-step reveal">
+            <div class="path-node">०४</div>
+            <h3 class="ne-display">पुनर्स्थापना र फेरि उठ्ने यात्रा</h3>
+            <p>उपचार पछि परिवार र समाजमा फर्किन तयार पार्ने निरन्तर सहयोग — किनकि यात्रा यहीँ सकिँदैन। Continued support toward returning to family and society — because the journey does not end at the door.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <h2 class="ne-display">हामी किन यहाँ छौं</h2>
+        <p class="about-lead">
+          <span class="ne">आश्रय सुधार तथा उपचार केन्द्र मोरङको गाछियामा स्थापित एक भरोसायोग्य पुनर्स्थापना केन्द्र हो। हामी विश्वास गर्छौं कि लतबाट मुक्ति सम्भव छ — र त्यो सम्भव बनाउनको लागि कुनै न कुनै रूपमा "हामी छौं" भन्ने कुराले नै ठूलो भर पर्छ।</span>
+        </p>
+        <p class="about-lead">
+          We are a community-rooted recovery shelter in Gachiya, Morang. Our belief is simple: recovery becomes possible the moment someone is no longer alone in facing it — that presence is the foundation of everything we do.
+        </p>
+      </div>
+
+      <ul class="value-list">
+        <li class="value-item reveal">
+          <span class="value-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-9C.5 7.5 3 4 6.5 4c2 0 3.5 1.2 4.5 2.5C12 5.2 13.5 4 15.5 4 19 4 21.5 7.5 21.5 12c-2.5 4.65-9.5 9-9.5 9z" stroke="#8B5A2B" stroke-width="1.6"/></svg>
+          </span>
+          <div class="value-text">
+            <h3 class="ne-display">सम्मान र गोपनीयता</h3>
+            <p>Dignity and confidentiality for every person who walks through our door, regardless of how far they've fallen.</p>
+          </div>
+        </li>
+        <li class="value-item reveal">
+          <span class="value-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="#4A6B4D" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <div class="value-text">
+            <h3 class="ne-display">समुदायमा आधारित हेरचाह</h3>
+            <p>Community-based care, not isolation — recovery happens alongside people, in a shared home.</p>
+          </div>
+        </li>
+        <li class="value-item reveal">
+          <span class="value-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#8B5A2B" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="#8B5A2B" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <div class="value-text">
+            <h3 class="ne-display">निरन्तर भएको साथ</h3>
+            <p>Long-term, ongoing support — not a one-time fix, but a relationship that continues through relapse and progress alike.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="services-head reveal">
+        <h2 class="ne-display">हाम्रा सेवाहरू</h2>
+        <p>What we offer inside the shelter, day to day.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-num">सेवा / 01</span>
+          <h3 class="ne-display">आश्रय तथा बासस्थान</h3>
+          <p>सुरक्षित, सफा र स्थिर बासस्थान उपचार अवधिभर। Safe, stable shelter and housing throughout treatment.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">सेवा / 02</span>
+          <h3 class="ne-display">नशा मुक्ति उपचार</h3>
+          <p>लागू पदार्थ तथा मद्यपान निर्भरताबाट मुक्तिका लागि संरचित कार्यक्रम। Structured de-addiction support for substance and alcohol dependency.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">सेवा / 03</span>
+          <h3 class="ne-display">परामर्श सेवा</h3>
+          <p>व्यक्तिगत र समूह परामर्श, मानसिक स्वास्थ्यमा ध्यान दिँदै। One-on-one and group counseling with attention to mental wellbeing.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">सेवा / 04</span>
+          <h3 class="ne-display">परिवार सम्पर्क</h3>
+          <p>परिवारसँग नियमित सम्पर्क र पुनर्मिलनमा सहयोग। Ongoing family contact and support toward reunification.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">सेवा / 05</span>
+          <h3 class="ne-display">दैनिक दिनचर्या</h3>
+          <p>अनुशासित दैनिक तालिका — काम, विश्राम र समूह क्रियाकलाप। A disciplined daily rhythm of work, rest, and group activity.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">सेवा / 06</span>
+          <h3 class="ne-display">पुनर्स्थापना सहयोग</h3>
+          <p>समाजमा फर्किने तयारी र पछिको हेरचाहमा निरन्तर साथ। Reintegration planning and continued aftercare.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BANNER QUOTE ===== -->
+  <section class="banner">
+    <div class="wrap">
+      <blockquote class="reveal">
+        "हामी छौं, <span class="em">र त्यसैले उपचार सम्भव छ।</span>"
+      </blockquote>
+      <cite>आश्रय सुधार तथा उपचार केन्द्र, गाछिया</cite>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <h2 class="ne-display">सम्पर्क गर्नुहोस्</h2>
+        <p class="contact-lead">
+          तपाईं वा तपाईंको परिवारको कोही व्यक्ति सहयोग खोज्दै हुनुहुन्छ भने, ढुक्क भएर फोन गर्नुहोस्। If you or someone in your family needs support, please reach out — there is no wrong time to call.
+        </p>
+
+        <div class="contact-cards">
+          <div class="contact-card">
+            <span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0122 16.92z" stroke="#C8703D" stroke-width="1.6"/></svg></span>
+            <div>
+              <span class="label">Phone / फोन</span><br>
+              <a href="tel:9811340434" class="value">981-1340434</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z" stroke="#C8703D" stroke-width="1.6"/><circle cx="12" cy="10" r="3" stroke="#C8703D" stroke-width="1.6"/></svg></span>
+            <div>
+              <span class="label">Location / ठेगाना</span><br>
+              <span class="value ne">गाछिया, मोरङ</span>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#C8703D" stroke-width="1.6"/><path d="M3 9h18" stroke="#C8703D" stroke-width="1.6"/></svg></span>
+            <div>
+              <span class="label">Reference ID</span><br>
+              <span class="value">shelter_2021</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-card reveal">
+        <h3 class="ne-display">कसरी पुग्ने</h3>
+        <div class="map-visual">
+          <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="360" height="220" fill="#3D352D"/>
+            <path d="M0,150 Q90,120 180,140 Q270,160 360,130" stroke="#5B4F40" stroke-width="14" fill="none"/>
+            <path d="M0,150 Q90,120 180,140 Q270,160 360,130" stroke="#C8703D" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+            <circle cx="180" cy="138" r="7" fill="#C8703D"/>
+            <circle cx="180" cy="138" r="13" fill="none" stroke="#C8703D" stroke-width="1.5" opacity="0.6"/>
+            <text x="180" y="100" text-anchor="middle" fill="#FAF6EE" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600">गाछिया, मोरङ</text>
+          </svg>
+        </div>
+        <p class="addr">आश्रय सुधार तथा उपचार केन्द्र<br>गाछिया, मोरङ जिल्ला, कोशी प्रदेश, नेपाल</p>
+        <p>For directions and visiting details, please call ahead — our team is happy to guide you in.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p class="ne">© आश्रय सुधार तथा उपचार केन्द्र — गाछिया, मोरङ</p>
+    <p>shelter_2021 · 981-1340434</p>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
